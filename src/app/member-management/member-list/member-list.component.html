@@ -1,29 +1,3 @@
-<mat-card>
-<p>member-list works!</p>
-
-<p>Test:</p>
 <div *ngFor="let member of memberList">
-  {{member.firstname}}
+  <app-member-item [member]="member"></app-member-item>
 </div>
-
-  <table mat-table [dataSource]="memberlist" style="width: 100%;">
-
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let member"> {{member.id}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="firstname">
-      <th mat-header-cell *matHeaderCellDef> First Name </th>
-      <td mat-cell *matCellDef="let member"> {{member.firstname}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="surname">
-      <th mat-header-cell *matHeaderCellDef> Last Name </th>
-      <td mat-cell *matCellDef="let member"> {{member.surname}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</mat-card>

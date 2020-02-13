@@ -15,7 +15,8 @@ export class VereinService {
   ) { }
 
   getMembers(): Observable<Member[]> {
-    return this.httpClient.get<Member[]>(this.url);
+    return this.httpClient.get<Member[]>('assets/mock/member.json'); 
+    // return this.httpClient.get<Member[]>(this.url);
   }
 
   createMember(member: Member): Observable<Member> {

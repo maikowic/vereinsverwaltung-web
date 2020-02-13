@@ -21,7 +21,6 @@ export class MemberManagementComponent implements OnInit {
 
   getMembers(): void {
     this.vereinService.getMembers().subscribe(members => {
-      console.log(members)
       this.memberList = members;
     })
   }

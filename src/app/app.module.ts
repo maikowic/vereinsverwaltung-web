@@ -10,6 +10,7 @@ import { MemberManagementComponent } from './member-management/member-management
 import { MemberListComponent } from './member-management/member-list/member-list.component';
 import { MemberCreateFormComponent } from './member-management/member-create-form/member-create-form.component';
 import { MaterialModule } from './shared/material/material.module';
+import { MemberItemComponent } from './member-management/member-list/member-item/member-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MaterialModule } from './shared/material/material.module';
     FinanceComponent,
     MemberManagementComponent,
     MemberListComponent,
-    MemberCreateFormComponent
+    MemberCreateFormComponent,
+    MemberItemComponent
   ],
   imports: [
     BrowserModule,
