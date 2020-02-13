@@ -9,7 +9,7 @@ import { FinanceComponent } from './finance/finance.component';
 import { MemberManagementComponent } from './member-management/member-management.component';
 import { MemberListComponent } from './member-management/member-list/member-list.component';
 import { MemberCreateFormComponent } from './member-management/member-create-form/member-create-form.component';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './shared/material/material.module';
 
 @NgModule({
   declarations: [
