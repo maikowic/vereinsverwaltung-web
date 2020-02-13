@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VereinService } from '../services/verein.service';
+import { Member } from '../shared/models/member';
 
 @Component({
   selector: 'app-member-management',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberManagementComponent implements OnInit {
 
-  constructor() { }
+  public memberList: Member[]
+
+  constructor(
+    private vereinService: VereinService
+  ) { }
 
   ngOnInit() {
+    this.getMembers();
+  }
+
+  getMembers(): void {
+    this.vereinService.getMembers().subscribe(members => {
+      console.log(members)
+      this.memberList = members;
+    })
   }
 
 }

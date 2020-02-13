@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VereinService } from 'src/app/services/verein.service';
 
 @Component({
   selector: 'app-member-create-form',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberCreateFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private vereinService: VereinService
+  ) { }
 
   ngOnInit() {
   }

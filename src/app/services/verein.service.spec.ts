@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MemberService } from './member.service';
+import { VereinService } from './verein.service';
 
-describe('MemberService', () => {
+describe('VereinService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MemberService = TestBed.get(MemberService);
+    const service: VereinService = TestBed.get(VereinService);
     expect(service).toBeTruthy();
   });
 });

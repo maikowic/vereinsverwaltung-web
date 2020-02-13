@@ -8,8 +8,8 @@ import { MemberCreateFormComponent } from './member-management/member-create-for
 const routes: Routes = [
   { path: 'management', component: MemberManagementComponent },
   { path: 'finance', component: FinanceComponent },
-  { path: 'form', component: MemberCreateFormComponent },
-  { path: '', redirectTo: '/form', pathMatch: 'full' },
+  { path: 'management/form', component: MemberCreateFormComponent },
+  { path: '', redirectTo: '/management', pathMatch: 'full' },
   { path: '**', redirectTo: '/management', pathMatch: 'full' }
 ];
 
