@@ -8,9 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinanceComponent } from './finance/finance.component';
 import { MemberManagementComponent } from './member-management/member-management.component';
 import { MemberListComponent } from './member-management/member-list/member-list.component';
-import { MemberCreateFormComponent } from './member-management/member-create-form/member-create-form.component';
+import { MemberFormComponent } from './member-management/member-form/member-form.component';
 import { MaterialModule } from './shared/material/material.module';
 import { MemberItemComponent } from './member-management/member-list/member-item/member-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MemberItemComponent } from './member-management/member-list/member-item
     FinanceComponent,
     MemberManagementComponent,
     MemberListComponent,
-    MemberCreateFormComponent,
+    MemberFormComponent,
     MemberItemComponent
   ],
   imports: [
@@ -26,7 +27,11 @@ import { MemberItemComponent } from './member-management/member-list/member-item
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [
+    MemberFormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

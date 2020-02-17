@@ -1,9 +1,13 @@
 <mat-card class="container">
-  <div class="item">{{member.firstname}}</div>
-  <div class="item">{{member.surname}}</div>
-  <div class="item">{{member.phone}}</div>
-  <div class="item">{{member.birthday}}</div>
-  <button mat-icon-button>
+  <div class="item-small">{{member.firstname}}</div>
+  <div class="item-small">{{member.surname}}</div>
+  <div class="item">{{member.email}}</div>
+  <div class="item-small">{{member.phone}}</div>
+  <div class="item-small">{{member.birthday}}</div>
+  <button mat-icon-button (click)="openEditDialog()">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="removeMember()">
     <mat-icon>delete</mat-icon>
   </button>
 </mat-card>

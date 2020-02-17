@@ -1,0 +1,47 @@
+<h1 mat-dialog-title style="text-align: center">{{data.purpose}} member:</h1>
+<div mat-dialog-content>
+  <form class="form" [formGroup]="memberForm">
+    <div class="form-field">
+      <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input matInput placeholder="Last name" formControlName="lastName" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input type="date" matInput placeholder="Birthday" formControlName="birthday" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input matInput placeholder="IBAN" formControlName="iban" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input type="tel" matInput placeholder="Phone" formControlName="phone" />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <input type="number" matInput placeholder="Fee" formControlName="fee" />
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="proceedClick()" cdkFocusInitial>
+    <span *ngIf="data.purpose == 'Create'">Create</span>
+    <span *ngIf="data.purpose == 'Edit'">Save</span>
+  </button>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Member } from '../shared/models/member';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Member } from '../shared/models/member';
 })
 export class VereinService {
 
-  url = "http://10.47.225.237:8080/members";
+  private url = "http://10.47.225.237:8080/members";
 
   constructor(
     private httpClient: HttpClient
@@ -20,7 +20,18 @@ export class VereinService {
   }
 
   createMember(member: Member): Observable<Member> {
-    return this.httpClient.post<Member>(this.url, member);
+    console.log("CREATE: " + member.firstname)
+    return this.httpClient.post<Member>(this.url /* CREATE */, member);
+  }
+
+  updateMember(member: Member): Observable<Member> {
+    console.log("UPDATE: " + member.id)
+    return this.httpClient.post<Member>(this.url /* UPDATE */, member);
+  }
+
+  removeMember(member: Member): Observable<Member> {
+    console.log("REMOVE: " + member.id)
+    return this.httpClient.post<Member>(this.url /* REMOVE */, member);
   }
 
 }
