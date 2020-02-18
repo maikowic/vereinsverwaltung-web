@@ -7,5 +7,9 @@
   <div class="item-small">Options</div>
 </mat-card>
 <div *ngFor="let member of memberList" style="margin-bottom: 1px;">
-  <app-member-item [member]="member"></app-member-item>
+  <app-member-item
+    [member]="member"
+    (removed)="onRemoved($event)"
+    (edited)="onEdited($event)">
+  </app-member-item>
 </div>

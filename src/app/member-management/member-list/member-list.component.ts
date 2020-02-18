@@ -16,4 +16,13 @@ export class MemberListComponent implements OnInit {
 
   }
 
+  onEdited(member: Member) {
+    let index = this.memberList.findIndex(element => element.id === member.id);
+    this.memberList[index] = member;
+  }
+
+  onRemoved(member: Member) {
+    this.memberList = this.memberList.filter(element => element != member)
+  }
+
 }

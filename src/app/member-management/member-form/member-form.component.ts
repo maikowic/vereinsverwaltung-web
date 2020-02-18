@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Member } from 'src/app/shared/models/member';
 import { FormBuilder, Validators } from '@angular/forms';
+import * as uuid from 'uuid';
 
 export enum Purpose {
   CREATE = "Create",
@@ -53,7 +54,7 @@ export class MemberFormComponent implements OnInit {
   proceedClick(): void {
     if (this.memberForm.valid) {
       let member: Member = {
-        id: this.data.member.id,
+        id: this.data.member.id ? this.data.member.id : uuid.v4(),
         lastpaid: this.data.member.lastpaid,
         firstname: this.memberForm.get('firstName').value,
         surname: this.memberForm.get('lastName').value,

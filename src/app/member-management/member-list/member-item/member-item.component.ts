@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Member } from 'src/app/shared/models/member';
 import { MatDialog } from '@angular/material';
 import { MemberFormComponent, Purpose } from '../../member-form/member-form.component';
@@ -12,6 +12,8 @@ import { VereinService } from 'src/app/services/verein.service';
 export class MemberItemComponent implements OnInit {
 
   @Input() public member: Member;
+  @Output() removed = new EventEmitter<Member>();
+  @Output() edited = new EventEmitter<Member>();
 
   constructor(
     private dialog: MatDialog,
@@ -30,16 +32,23 @@ export class MemberItemComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(member => {
-      console.log(member)
-
       if (member) {
-        this.vereinService.updateMember(member)
+        // Todo move inside subscribe
+        this.edited.emit(member);
+        this.vereinService.updateMember(member).subscribe(response => {
+          // Todo
+        })
       }
     })
   }
 
   removeMember() {
-    this.vereinService.removeMember(this.member)
+    // Todo move inside subscribe
+    this.removed.emit(this.member)
+    this.vereinService.removeMember(this.member).subscribe(response => {
+      // Todo
+
+    })
   }
 
 }
