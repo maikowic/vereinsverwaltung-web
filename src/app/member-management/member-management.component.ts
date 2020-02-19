@@ -38,10 +38,8 @@ export class MemberManagementComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(member => {
       if (member) {
-        // Todo move inside subscribe
-        this.memberList.push(member)
         this.vereinService.createMember(member).subscribe(response => {
-          // Todo
+          this.getMembers();
         })
       }
     })

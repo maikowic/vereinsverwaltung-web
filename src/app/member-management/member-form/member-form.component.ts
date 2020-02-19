@@ -54,7 +54,7 @@ export class MemberFormComponent implements OnInit {
   proceedClick(): void {
     if (this.memberForm.valid) {
       let member: Member = {
-        id: this.data.member.id ? this.data.member.id : uuid.v4(),
+        id: this.data.member.id ? this.data.member.id : undefined,
         lastpaid: this.data.member.lastpaid,
         firstname: this.memberForm.get('firstName').value,
         surname: this.memberForm.get('lastName').value,

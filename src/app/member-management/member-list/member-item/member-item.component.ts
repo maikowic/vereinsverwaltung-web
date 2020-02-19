@@ -33,21 +33,16 @@ export class MemberItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(member => {
       if (member) {
-        // Todo move inside subscribe
-        this.edited.emit(member);
         this.vereinService.updateMember(member).subscribe(response => {
-          // Todo
+          this.edited.emit(member);
         })
       }
     })
   }
 
   removeMember() {
-    // Todo move inside subscribe
-    this.removed.emit(this.member)
     this.vereinService.removeMember(this.member).subscribe(response => {
-      // Todo
-
+      this.removed.emit(this.member)
     })
   }
 
