@@ -8,7 +8,7 @@ import { Member } from '../shared/models/member';
 })
 export class VereinService {
 
-  private url = "http://10.47.225.237:8080/member";
+  private url = "http://localhost:8080/member";
 
   constructor(
     private httpClient: HttpClient

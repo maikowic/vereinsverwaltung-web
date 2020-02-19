@@ -13,6 +13,6 @@ export class FinanceService {
   ) { }
 
   getJournalEntries(): Observable<JournalEntry[]> {
-    return this.httpClient.get<JournalEntry[]>('assets/mock/journal-entry.json'); 
+    return this.httpClient.get<JournalEntry[]>('http://localhost:8080/member/banking'); 
   }
 }
