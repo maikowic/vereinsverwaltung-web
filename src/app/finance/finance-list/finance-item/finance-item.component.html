@@ -1,0 +1,12 @@
+<div class="card container-row">
+  <div class="container-column item-small">
+    <div>{{journalEntry.name}}</div>
+    <div>{{journalEntry.description}}</div>
+  </div>
+  <div class="item-small">{{journalEntry.entrytype}}</div>
+  <div class="{{journalEntry.entrytype == 'credit' ? 'green' : 'red'}}">
+    <span *ngIf="journalEntry.entrytype == 'debit' || journalEntry.entrytype == 'transfer'">-</span>
+    {{journalEntry.amount | currency: "EUR"}}
+  </div>
+</div>
+<mat-divider></mat-divider>
